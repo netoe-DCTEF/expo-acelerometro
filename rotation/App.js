@@ -10,7 +10,10 @@ export default function App() {
   });
   const [subscription, setSubscription] = useState(null);
 
-  const _slow = () => Accelerometer.setUpdateInterval(1000);
+  const _slow = () =>
+    Accelerometer.setUpdateInterval(
+      1000
+    ); /* Configurando o tempo de "percepção da escuta""*/
   const _fast = () => Accelerometer.setUpdateInterval(500);
 
   const _subscribe = () => {
@@ -30,7 +33,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>
-        Accelerometer: (in gs where 1g = 9.81 m/s^2)
+        Accelerômetro: (Considerando a constante G = 9.81 m/s^2)
       </Text>
       <Text style={styles.text}>x: {x.toFixed(2)}</Text>
       <Text style={styles.text}>y: {y.toFixed(2)}</Text>
